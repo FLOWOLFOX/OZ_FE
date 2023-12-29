@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+</head>
+
+<!--
+    요구사항
+    - input 사용
+    - 지역은 select 사용
+    - button 또는 input type = submit 사용
+    - 이메일, 이름, 비밀번호, 휴대폰 번호 필드를 만들고 type 설정
+    - radio로 성별 선택
+-->
+
+<body>
+    <h1>회원가입</h1>
+    <form>
+        <fieldset>
+            <legend>필수 입력 사항</legend>
+            <li>
+                <label for="name">이 름 : </label>
+                <input type="text" id="name" name="name" placeholder="성함을 입력해주세요">
+            </li>
+            <br>
+            <li>
+                <label for="id">아이디 : </label>
+                <input type="text" id="id" name="id" placeholder="6자 이상 20자 미만 공백 없이 설정해주세요">
+            </li>
+            <br>
+            <li>
+                <label for="pw">비밀번호 : </label>
+                <input type="password" id="pw" name="pw" placeholder="대소문자, 숫자를 조합해 설정해주세요">
+            </li>
+            <br>
+            <li>
+                <label for="pw_check">비밀번호 확인 : </label>
+                <input type="password" id="pw_check" name="pw_check" placeholder="비밀번호를 다시 입력해주세요">
+            </li>
+            <br>
+            <li>
+                <label for="email">이메일 : </label>
+                <input type="email" id="email" name="email">
+            </li>
+            <br>
+            <li>
+                <label for="tel">휴대폰 : </label>
+                <input type="tel" id="tel" name="tel">
+            </li>
+            <br>
+            <li>
+                <label for="region">지역 : </label>
+                <select>
+                    <option value="disable" disabled selected>지역을 선택해주세요</option>
+                    <option value="seoul">서울특별시</option>
+                    <option value="busan">부산광역시</option>
+                    <option value="daegu">대구광역시</option>
+                    <option value="incheon">인천광역시</option>
+                    <option value="gwangju">광주광역시</option>
+                    <option value="daejeon">대전광역시</option>
+                    <option value="ulsan">울산광역시</option>
+                    <option value="sejong">세종특별자치시</option>
+                    <option value="gyeonggi">경기도</option>
+                    <option value="gangwon">강원도</option>
+                    <option value="chungbuk">충청북도</option>
+                    <option value="chungnam">충청남도</option>
+                    <option value="jeonbuk">전라북도</option>
+                    <option value="jeonnam">전라남도</option>
+                    <option value="gyeongbuk">경상북도</option>
+                    <option value="gyeongnam">경상남도</option>
+                    <option value="jeju">제주특별자치도</option>
+                </select>
+            </li>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>선택 입력 사항</legend>
+            <li>
+                취미 (중복 선택 가능)
+                <br>
+                <input type="checkbox" id="coding" name="hobby">
+                <label for="coding">코딩</label>
+                <input type="checkbox" id="travel" name="hobby">
+                <label for="travel">여행</label>
+                <input type="checkbox" id="roasting" name="hobby">
+                <label for="roasting">로스팅</label>
+                <input type="checkbox" id="reading" name="hobby">
+                <label for="reading">독서</label>
+                <input type="checkbox" id="watching" name="hobby">
+                <label for="watchding">방송 시청</label>
+            </li>
+            <br>
+            <li>
+                성별
+                <br>
+                <input type="radio" id="male" name="gender">
+                <label for="male">남성</label>
+                <input type="radio" id="female" name="gender">
+                <label for="female">여성</label>
+            </li>
+        </fieldset>
+        <br>
+        <input type="submit">
+    </form>
+</body>
+</html>
