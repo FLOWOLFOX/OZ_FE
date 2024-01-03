@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>박스로 간단하게 꾸미기</title>
+    <style>
+        body{
+            /*
+                Flexbox를 이용해 콘텐츠 요소를 브라우저 화면 중앙에 위치
+                가로 방향 정렬과 세로 방향 정렬을 위해 각각 justify-content와 align-item속성을 center로 설정
+            */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+
+            /*
+                linear-gradient을 사용해, 기준 각도, 시작되는 색과 끝나는 색 설정
+                최소 높이를 현재 보여지는 뷰포트 높이로 설정
+            */
+            background: linear-gradient(45deg, skyblue, orange);
+            min-height: 100dvh;
+        }
+        p{
+            font-family: monospace, Arial, sans-serif;
+            font-weight: bolder;
+            font-size: 32px;
+            color: rgb(60, 115, 215);
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border: 5px solid rgb(60, 115, 215);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Hello, OZ!</p>
+    </div>
+</body>
+</html>

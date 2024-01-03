@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS를 이용한 회원가입 폼 만들기</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        body{
+            background-image: url(images/북커버.jpg);
+            background-size: 1000px 950px;
+            background-repeat: no-repeat;
+            background-origin: content-box;
+            background-position: center;
+        }
+        main{
+            width: 450px;
+            margin: auto;
+        }
+        .text{
+            text-align: left;
+            width: 350px;
+        }
+        .phone{
+            width: 100px;
+        }
+        #code{
+            text-align: right;
+        }
+        #region{
+            width: 350px;
+        }
+        #submit{
+            width: 450px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OZ 초격차 회원가입</h1>
+    </header>
+    <main>
+        <form>
+            <fieldset>
+                <legend>필수 입력 사항</legend>
+                <input type="email" id="email" name="email" class="text" placeholder="이메일을 입력하세요.">
+                <br><br>
+                <input type="text" id="name" name="name" class="text" placeholder="이름을 입력하세요.">
+                <br><br>
+                <input type="password" id="pw" name="pw" class="text" placeholder="비밀번호를 입력하세요.">
+                <br><br>
+                <input type="password" id="pw_check" name="pw_check" class="text" placeholder="비밀번호를 다시 입력하세요.">
+                <br><br>
+                <input type="tel" id="tel_num1" name="tel_num" class="phone" placeholder="010"> -
+                <input type="tel" id="tel_num2" name="tel_num" class="phone" placeholder="1234"> -
+                <input type="tel" id="tel_num3" name="tel_num" class="phone" placeholder="5678">
+                <br><br>
+                <div id="code">
+                    000000 
+                    <input type="button" id="code_send" name="code_send" value="인증번호 전송">
+                    <br><br>
+                    3:00 
+                    <input type="button" id="code_check" name="code_check" value="인증번호 확인" disabled>
+                </div>
+            </fieldset>
+            <br><br>
+            <fieldset>
+                <legend>선택 입력 사항</legend>
+                <select id="region">
+                    <option value="disable" disabled selected>- 지역을 선택하세요 -</option>
+                    <option value="seoul">서울특별시</option>
+                    <option value="busan">부산광역시</option>
+                    <option value="daegu">대구광역시</option>
+                    <option value="incheon">인천광역시</option>
+                    <option value="gwangju">광주광역시</option>
+                    <option value="daejeon">대전광역시</option>
+                    <option value="ulsan">울산광역시</option>
+                    <option value="sejong">세종특별자치시</option>
+                    <option value="gyeonggi">경기도</option>
+                    <option value="gangwon">강원도</option>
+                    <option value="chungbuk">충청북도</option>
+                    <option value="chungnam">충청남도</option>
+                    <option value="jeonbuk">전라북도</option>
+                    <option value="jeonnam">전라남도</option>
+                    <option value="gyeongbuk">경상북도</option>
+                    <option value="gyeongnam">경상남도</option>
+                    <option value="jeju">제주특별자치도</option>
+                </select>
+                <br><br>
+                <input type="radio" id="female" name="gender">
+                <label for="female">여성</label>
+                <input type="radio" id="male" name="gender">
+                <label for="male">남성</label>
+            </fieldset>
+            <br><br>
+            <input type="submit" id="submit" value="가입하기">
+        </form>
+    </main>
+    <br>
+    <footer>
+        <a href="https://kr.freepik.com/free-vector/vector-blank-book-cover-isolated-on-white_10601355.htm#query=%EC%B1%85%20%ED%91%9C%EC%A7%80&position=13&from_view=keyword&track=ais&uuid=ed7ce504-8914-473b-b027-dbd96881d23b">작가 macrovector</a> 출처 Freepik
+    </footer>
+</body>
+</html>

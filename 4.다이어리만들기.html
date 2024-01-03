@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>다이어리 만들기</title>
+    <style>
+        *{
+            text-align: center;
+            background-color: thistle;
+        }
+        h1{
+            color: blueviolet;
+        }
+        #today{
+            display: flex;
+            justify-content: center;
+            font-size: 18px;
+        }
+        td, th{
+            border: 1px solid black;
+        }
+        .color_change{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>나만의 일기장</h1>
+    </header>
+    <main>
+        <table id="today">
+            <tr>
+                <th>2024년 1월</th>
+                <th>
+                    날씨 : 
+                    <input type="radio" id="sunny" name="weather">
+                    <label for="sunny">☀ </label>
+                    <input type="radio" id="cloudy" name="weather">
+                    <label for="cloudy">☁ </label>
+                    <input type="radio" id="windy" name="weather">
+                    <label for="windy">🌪 </label>
+                    <input type="radio" id="rainy" name="weather">
+                    <label for="rainy">☔ </label>
+                    <input type="radio" id="snowy" name="weather">
+                    <label for="snowy">❄ </label>
+                </th>
+                <th>
+                    기분 : 
+                    <input type="range" id="mood" name="mood" min="0" max="10">
+                </th>
+            </tr>
+            <tr>
+                <td colspan="3" align="center" id="cat">
+                    <img src="images/꼬망.jpg">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center" id="blah">
+                    2024년 갑진년, <span class="color_change">청룡</span>의 해가 밝았습니다.
+                    <br>
+                    새해에는 <span class="color_change">용</span>처럼 힘차게 날아오르시고, 소망하는 <strong>모든 일</strong>이 이루어지시길 기원합니다.
+                </td>
+            </tr>
+        </table>
+        <div id="blah">
+            <p></p>
+        </div>
+    </main>
+    <footer>
+        <p>OZ</p>
+    </footer>
+</body>
+</html>
