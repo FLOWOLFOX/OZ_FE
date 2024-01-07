@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML, CSS를 이용해서 나만의 채팅방 만들기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <link href="3.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <main class="chat_screen">
+            <section class="chat_screen_bar">
+                <div class="user">
+                    <div class="user_column_l">
+                        <div class="user_pic">
+                            <img src="images/고양이젤리.jpeg" alt="프로필 사진">
+                        </div>
+                    </div>
+                    <div class="user_column_l">
+                        <p class="user_first_name">지원</p>
+                        <p class="user_last_name">홍</p>
+                    </div>
+                    <div class="user_column_r">
+                        <div class="user_column_l">
+                            <p class="user_birthday">생일 &nbsp;: &nbsp;</p>
+                            <p class="user_rel">관계 &nbsp;: &nbsp;</p>
+                        </div>
+                        <div class="user_column_l">
+                            <p class="user_birthday_value">11.14</p>
+                            <p class="user_rel_value">나</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="chat_screen_img_box">
+                <img class="chat_screen_img">
+            </section>
+        </main>
+
+        <form class="chat_form">
+            <section class="chat_form_field">
+                <textarea class="chat_form_msg"></textarea>
+                <input type="submit" value="전송" class="chat_form_btn">
+            </section>
+        </form>
+    </div>
+</body>
+</html>

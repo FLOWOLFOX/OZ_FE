@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>간단한 소개 화면 만들기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <style>
+        *{
+            background-color: beige;
+            font-family: 'Gamja Flower', sans-serif, monospace;
+        }
+        #container{
+            display: flex;
+            /*
+            height: 250px;
+            border-radius: 10%;
+            */
+        }
+        
+        #side{
+            background-color: yellow;
+            width: 250px;
+            height: 300px;
+            border-radius: 20px 0px 0px 20px;
+            overflow: scroll;
+            text-align: center;
+        }
+        #smile{
+            background-color: yellow;
+            width: 50px;
+            margin: 10px;
+        }
+        #side > h1{
+            background-color: yellow;
+            margin: 0;
+        }
+        #side > span{
+            background-color: yellow;
+        }
+        .text_green{
+            color: green;
+        }
+
+        #class_oz{
+            background-color: white;
+            width: calc(100% - 250px);
+            height: 300px;
+            border-radius: 0px 20px 20px 0px;
+        }
+        #class_oz > h1, #class_oz > span{
+            background-color: white;
+            padding-left: 20px;
+        }
+
+        span{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="side">
+            <img src="images/smile.png" id="smile"><br>
+            <h1>Fun Sidebar</h1><br>
+            <span>Enjoy your time here!</span><br><br>
+            <span class="text_green">🎮 Play a Game</span><br>
+            <span class="text_green">🎧 Listen to Music</span><br>
+            <span class="text_green">🖥️ Watch a Movie</span><br><br>
+            <span>overflow_scroll_testoverflow_scroll_testoverflow_scroll_test</span><br>
+            <span>overflow_scroll_testoverflow_scroll_testoverflow_scroll_test</span><br>
+            <span>overflow_scroll_testoverflow_scroll_testoverflow_scroll_test</span><br>
+        </div>
+        <div id="class_oz">
+            <h1>즐거운 초격차 교실!</h1>
+            <span>Welcome to the fun zone of OZ! Have a good time!</span><br><br>
+            <span class="text_green">😀 Tell a Joke</span><br>
+            <span class="text_green">🎨 Draw Something</span><br>
+            <span class="text_green">☕️ Grab a Coffee</span><br>
+        </div>
+    </div>
+    <footer>
+        <p><strong>이미지 출처</strong></p>
+        <a href="https://www.flaticon.com/kr/free-icons/" title="미소 아이콘">미소 아이콘  제작자: Mayor Icons - Flaticon</a>
+    </footer>
+</body>
+</html>

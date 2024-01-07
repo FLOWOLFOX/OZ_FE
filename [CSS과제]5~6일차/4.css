@@ -1,0 +1,287 @@
+/* 전체적인 세팅 */
+*{
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic', sans-serif, monospace;
+}
+html{
+    height: 100%;
+    background-color: rgb(240, 240, 240);
+}
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 텍스트 세팅 */
+.black_text{
+    color: black;
+}
+.gray_text{
+    color: gray;
+}
+.white_text{
+    color: white;
+}
+
+
+/* 컨테이너 */
+.container{
+    height: 100%;
+}
+
+
+/* 상단 메뉴 */
+.menu{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+.blank{
+    width: 20%;
+    height: 50px;
+}
+#menu_list{
+    width: 60%;
+    height: 50px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/* 메인 화면 세팅 */
+.main_screen{
+    
+}
+
+
+/* 배너 */
+.banner{
+    height: 100px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.banner_link a:link, .banner_link a:visited{
+    color: blue;
+    text-decoration: none;
+}
+.banner_link a:hover, .banner_link a:active{
+    color: blue;
+    text-decoration: underline;
+}
+
+
+/* 문장, 지원 */
+.thing{
+    height: 200px;
+    display: flex;
+}
+/* 문장 */
+.ad{
+    width: 80%;
+    height: 100%;
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.ad span{
+    font-size: 42px;
+    font-weight: bolder;
+}
+/* 지원 */
+.help{
+    width: 20%;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.inquire, .find_store{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.help_img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.col{
+    margin-left: 10px;
+}
+.help_text{
+    font-weight: bolder;
+}
+.help a:link, .help a:visited{
+    color: blue;
+    text-decoration: none;
+}
+.help a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+.help a:active{
+    color: blue;
+    text-decoration: none;
+}
+
+
+/* 제품 */
+.product_list{
+    height: 200px;
+    display: flex;
+}
+.products{
+    width: 80%;
+    padding-left: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.product_blank{
+    width: 20%;
+}
+.product_img{
+    width: 100px;
+}
+
+
+/* 신제품 뉴스 */
+.news{
+    display: flex;
+    flex-direction: column;
+}
+.news_text{
+    padding-left: 100px;
+    font-size: 24px;
+}
+.news_list{
+    padding-top: 20px;
+    padding-left: 80px;
+    display: flex;
+    flex-direction: row;
+}
+.news_cards{
+    padding-left: 20px;
+}
+.news_card{
+    width: 400px;
+    height: 500px;
+    border-radius: 5%;
+}
+.card_img1{
+    background-image: url(images/news/iphone-15-pro.jpeg);
+    background-size: 400px;
+    width: 400px;
+    height: 500px;
+}
+.card_img2{
+    background-image: url(images/news/promo.jpeg);
+    background-size: 400px;
+    width: 400px;
+    height: 500px;
+}
+.card_img3{
+    background-image: url(images/news/watch.jpeg);
+    background-size: 400px;
+    width: 400px;
+    height: 500px;
+}
+.card_img4{
+    background-image: url(images/news/macbook-pro.jpeg);
+    background-size: 400px;
+    width: 400px;
+    height: 500px;
+}
+.card_text{
+    display: flex;
+    flex-direction: column;
+}
+.card_text:first-child{
+    padding: 28px;
+    font-size: 16px;
+}
+.card_text:nth-of-type(2){
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 26px;
+}
+.card_text:nth-child(n+3){
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 16px;
+}
+
+
+/* 하단부 */
+.footer{
+    height: 300px;
+}
+/* 링크 */
+.link{
+    height: 200px;
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.fast_link_text{
+    font-size: 28px;
+}
+.link_list{
+    
+}
+.link_btns{
+    display: flex;
+    flex-direction: row;
+}
+.link_btn{
+    width: 100px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 30px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer_hr{
+    width: 60%;
+}
+/* 저작권 */
+.copyright{
+    display: flex;
+}
+.copyright_content{
+    width: 60%;
+}
+.copyright_text:first-child{
+    padding-right: 30px;
+    font-size: 14px;
+}
+.copyright_text:nth-child(n+2){
+    padding-right: 10px;
+    font-size: 12px;
+}
+.copyright_text:last-child{
+    float: right;
+    font-size: 12px;
+}
