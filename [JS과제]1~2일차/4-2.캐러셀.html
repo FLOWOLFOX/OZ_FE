@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐러셀</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+        .carousel-wrapper{
+            width: 500px;
+            height: 300px;
+            overflow: hidden;
+            transition: transform 0.5s;
+        }
+        .carousel-wrapper > .carousel{
+            display: flex;
+            transform: translate3d(0, 0, 0);
+            transition: transform 0.5s;
+        }
+        .carousel-wrapper > .carousel > img{
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-wrapper">
+        <div class="carousel">
+            <img src="images/1.jpeg">
+            <img src="images/2.jpeg">
+            <img src="images/3.jpeg">
+        </div>
+    </div>
+
+    <button class="btn1">1</button>
+    <button class="btn2">2</button>
+    <button class="btn3">3</button>
+    <button class="btn_next">다음</button>
+
+    <script>
+        const btn1 = document.querySelector('.btn1');
+        const btn2 = document.querySelector('.btn2');
+        const btn3 = document.querySelector('.btn3');
+        const btn_next = document.querySelector('.btn_next');
+        const carousel = document.querySelector('.carousel');
+
+        let index = 0;
+
+        btn1.addEventListener('click', () => {
+            index = 0;
+            carousel.style.transform = `translate3d(0, 0, 0)`;
+        });
+        btn2.addEventListener('click', () => {
+            index = 1;
+            carousel.style.transform = `translate3d(-500px, 0, 0)`;
+        });
+        btn3.addEventListener('click', () => {
+            index = 2;
+            carousel.style.transform = `translate3d(-1000px, 0, 0)`;
+        });
+        btn_next.addEventListener('click', () => {
+            if(index == 2){
+                index = 0;
+                carousel.style.transform = `translate3d(0, 0, 0)`;
+            }else{
+                index++;
+                carousel.style.transform = `translate3d(-${500 * (index)}px, 0, 0)`;
+            }
+        });
+    </script>
+</body>
+</html>
