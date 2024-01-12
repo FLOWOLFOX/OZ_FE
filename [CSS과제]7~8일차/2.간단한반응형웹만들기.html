@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 반응형 웹 만들기</title>
+    <style>
+        body{
+            background-color: skyblue;
+        }
+        .text{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        p{
+            color: white;
+        }
+        p:first-child{
+            font-weight: bolder;
+        }
+        p:nth-child(n+2){
+            display: none;
+        }
+
+        @media screen and (max-width: 1700px){
+            body{
+                background-color: brown;
+            }
+            p:nth-of-type(2){
+                display: block;
+            }
+        }
+        @media screen and (max-width: 1500px){
+            body{
+                background-color: blue;
+            }
+            p:nth-child(n+2){
+            display: none;
+            }
+            p:nth-of-type(3){
+                display: block;
+            }
+        }
+        @media screen and (max-width: 1000px){
+            body{
+                background-color: purple;
+            }
+            p:nth-child(n+2){
+            display: none;
+            }
+            p:nth-of-type(4){
+                display: block;
+            }
+        }
+        @media screen and (max-width: 500px){
+            body{
+                background-color: green;
+            }
+            p:nth-child(n+2){
+            display: none;
+            }
+            p:nth-of-type(5){
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text">
+        <p>여러 화면 크기로 구경해봐요!</p>
+        <p>너비 1700px 이하</p>
+        <p>너비 1500px 이하</p>
+        <p>너비 1000px 이하</p>
+        <p>너비 500px 이하</p>
+    </div>
+</body>
+</html>

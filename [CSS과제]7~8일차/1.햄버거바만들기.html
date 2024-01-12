@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거 바 만들기</title>
+    <style>
+        /* 너비 550px 이하 설정 */
+        .list_icon_on{
+              display: none;
+              flex-direction: column;
+        }
+        .list_icon_on:active .list_ul{
+            display: block;
+        }
+        .list_ul{
+            display: none;
+            margin: 0;
+            padding: 0;
+        }
+        .list_li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 50px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            
+        }
+        .list_li:first-of-type{
+            background-color: green;
+        }
+        ul{
+            list-style-type: none;
+        }
+        
+
+        /* 너비 550px 초과 설정(기본값) */
+        .list_icon_off{
+            display: block;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .items{
+            display: flex;
+        }
+        .item{
+            width: 100px;
+            height: 50px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .item:first-of-type{
+            background-color: green;
+        }
+
+
+        /* 미디어 쿼리 */
+        /* 너비 550px 이하 */
+        @media screen and (max-width: 550px){
+            .navigation{
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+            .list_icon_on{
+                display: flex;
+            }
+            .list_icon_off{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navigation">
+        <div class="list_icon_on">
+            <div class="list_icon">
+                <span>☰</span>
+            </div>
+            <div class="list">
+                <ul class="list_ul">
+                    <li class="list_li">홈</li>
+                    <li class="list_li">소개</li>
+                    <li class="list_li">서비스</li>
+                    <li class="list_li">문의</li>
+                </ul>
+            </div>
+        </div>
+        
+        
+        <div class="list_icon_off">
+            <div class="list">
+                <div class="items">
+                    <span class="item">홈</span>
+                    <span class="item">소개</span>
+                    <span class="item">서비스</span>
+                    <span class="item">문의</span>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+</body>
+</html>
