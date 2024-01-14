@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OZ 코딩 홈페이지 만들기</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html{
+            background-color: azure;
+        }
+        body{
+            margin: 0;
+        }
+        .container{
+            
+        }
+        .flex{
+            display: flex;
+        }
+    </style>
+    <link href="header.css" rel="stylesheet">
+    <link href="nav.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="triangle__l"></div>
+            <div class="triangle__r"></div>
+            <div class="header__text">
+                <span class="text__anim">🥊</span>
+                <span>&nbsp;&nbsp;코린이 오늘도 화이팅!!&nbsp;&nbsp;</span>
+                <span class="text__anim">👀</span>
+            </div>
+        </header>
+
+        <nav class="nav flex">
+            <div class="nav__logo">
+                    <a href="#">OZ</a>
+            </div>
+            <div class="nav__menu flex">
+                <ul>
+                    <li>
+                        <a href="#">오즈코딩 스쿨</a>
+                    </li>
+                    <li>
+                        <a href="#">HTML</a>
+                    </li>
+                    <li>
+                        <a href="#">CSS</a>
+                    </li>
+                    <li>
+                        <a href="#">커리큘럼</a>
+                    </li>
+                    <li>
+                        <a href="#">문의사항</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav__icon__on" id="icon" onclick="iconClick()">
+                <span class="nav__icon">☰</span>
+            </div>
+        </nav>
+
+        <main class="main">
+            <div class="menu__list" id="menu__list">
+                <ul class="flex">
+                    <li>오즈코딩 스쿨</li>
+                    <hr>
+                    <li>HTML</li>
+                    <hr>
+                    <li>CSS</li>
+                    <hr>
+                    <li>커리큘럼</li>
+                    <hr>
+                    <li>문의사항</li>
+                </ul>
+            </div>
+            <div class="main__text flex" id="main__text">
+                <p>ABOUT</p>
+                <h1>OZ코딩스쿨</h1>
+            </div>
+            <div class="main__contents flex">
+                <div class="main__content" onclick="location.href='https://ozcodingschool.com/'">
+                    <div class="main__content__img" id="lecture"></div>
+                    <h1>빠른 강의</h1>
+                    <p>군더더기 없는 진행으로<br>여러분의 시간을 절약합니다.</p>
+                </div>
+                <div class="main__content">
+                    <div class="main__content__img" id="study"></div>
+                    <h1>손쉬운 학습</h1>
+                    <p>강의 페이지를 활용해서<br>편리하게 실습할 수 있습니다.</p>
+                </div>
+                <div class="main__content">
+                    <div class="main__content__img" id="tool"></div>
+                    <h1>플레이그라운드</h1>
+                    <p>강의를 위해 제작한 도구가<br>반복학습을 도와줍니다.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let icon = document.getElementById("icon");
+        let menu__list = document.getElementById("menu__list");
+        let main__text = document.getElementById("main__text");
+        let i = 0;
+
+        function iconClick(){
+            if(i == 0){
+                icon.style.backgroundColor = "yellowgreen";
+                icon.style.color = "yellowgreen";
+                main__text.style.display = "none";
+                menu__list.style.display = "flex";
+                i++;
+            }else{
+                icon.style.backgroundColor = "teal";
+                icon.style.color = "teal";
+                main__text.style.display = "flex";
+                menu__list.style.display = "none";
+                i--;
+            }
+        }
+
+        window.onresize = function(){
+            const width = window.innerWidth;
+            
+            if(width > 768){
+                main__text.style.display = "flex";
+                menu__list.style.display = "none";
+            }
+            if (width <= 768 && i == 1){
+                icon.style.backgroundColor = "yellowgreen";
+                icon.style.color = "yellowgreen";
+                main__text.style.display = "none";
+                menu__list.style.display = "flex";
+            }
+        }
+    </script>
+</body>
+</html>

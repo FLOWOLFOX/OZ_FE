@@ -1,0 +1,64 @@
+.header{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background: url(../images/modo.jpeg);
+}
+.header::before{
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+}
+.triangle__l{
+    position: absolute;
+    top: 400px;
+    width: 0px;
+    height: 0px;
+    background-color: transparent;
+    border-right: 100vw solid transparent;
+    border-left: 0px solid transparent;
+    border-bottom: 100px solid skyblue;
+    filter: brightness(70%);
+    z-index: 2;
+}
+.triangle__r{
+    position: absolute;
+    top: 400px;
+    width: 0px;
+    height: 0px;
+    background-color: transparent;
+    border-right: 0px solid transparent;
+    border-left: 100vw solid transparent;
+    border-bottom: 100px solid skyblue;
+    filter: brightness(50%);
+    z-index: 1;
+}
+.header__text{
+    width: 100%;
+    font-size: 48px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 85%;
+    z-index: 3;
+}
+.header__text > .text__anim{
+    animation: blink 0.5s 0s linear infinite;
+}
+
+@keyframes blink{
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+}
+
+@media screen and (max-width: 768px){
+    .header__text{
+        font-size: 36px;
+        top: 87%;
+    }
+}

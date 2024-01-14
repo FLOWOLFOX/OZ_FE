@@ -1,0 +1,111 @@
+.main{
+    background-color: azure;
+}
+
+/* 메인 텍스트 */
+.main__text{
+    height: 400px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+}
+.main__text p{
+    font-size: 24px;
+    color: violet;
+}
+.main__text h1{
+    font-size: 64px;
+}
+
+/* 햄버거바 리스트 */
+.menu__list{
+    display: none;
+    height: 400px;
+}
+.menu__list ul{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    flex-direction: column;
+}
+.menu__list ul li{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 20px;
+}
+.menu__list ul hr{
+    margin: 0;
+}
+
+/* 메인 콘텐츠 */
+.main__contents{
+    margin: 70px 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: azure;
+    position: relative;
+}
+.main__content{
+    margin: 30px;
+    border-radius: 20px;
+    background-color: rgb(150, 90, 220);
+    text-align: center;
+    transform: scale(1.0);
+    transition: transform 0.5s;
+}
+.main__content:nth-of-type(1){
+    cursor: pointer;
+}
+.main__content__img{
+    width: 400px;
+    height: 400px;
+    margin-top: 30px;
+}
+#lecture{
+    background: url(../images/about_1.svg) no-repeat;
+}
+#study{
+    background: url(../images/about_2.svg) no-repeat;
+}
+#tool{
+    background: url(../images/about_3.svg) no-repeat;
+}
+.main__content:nth-of-type(1) h1{
+    color: skyblue;
+}
+.main__content:nth-of-type(2) h1{
+    color: greenyellow;
+}
+.main__content:nth-of-type(3) h1{
+    color: orange;
+}
+.main__content p{
+    margin-bottom: 50px;
+    font-size: 18px;
+    color: white;
+}
+
+/* 마우스 호버 */
+@media screen and (min-width: 769px){
+    .main__contents:hover .main__content{
+        filter: blur(5px);
+        transform: scale(0.9);
+        transition: transform 0.5s;
+        transition: 0.5s ease-in-out;
+    }
+    .main__content:nth-child(n):hover{
+        filter: blur(0px);
+        transform: scale(1.0);
+        transition: transform 0.5s;
+        transition: 0.5s ease-in-out;
+    }    
+}
