@@ -71,13 +71,13 @@
     margin-top: 30px;
 }
 #lecture{
-    background: url(../images/about_1.svg) no-repeat;
+    background: url(images/about_1.svg) no-repeat;
 }
 #study{
-    background: url(../images/about_2.svg) no-repeat;
+    background: url(images/about_2.svg) no-repeat;
 }
 #tool{
-    background: url(../images/about_3.svg) no-repeat;
+    background: url(images/about_3.svg) no-repeat;
 }
 .main__content:nth-of-type(1) h1{
     color: skyblue;
