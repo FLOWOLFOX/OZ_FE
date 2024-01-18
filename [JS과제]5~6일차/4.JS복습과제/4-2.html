@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 만들기</title>
+    <style>
+        table, tr, td{
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>구구단 표</h1>
+    <div id="container"></div>
+    
+    <script>
+        let table = document.createElement("table");
+
+        for(i = 1; i <= 2; i++){
+            let tr = document.createElement("tr");
+            table.append(tr);
+
+            for(j = 2; j <= 9; j++){
+                let td = document.createElement("td");
+                table.append(td);
+                
+                if(i == 1){
+                    td.textContent = `${j}단`;
+                }else{
+                    for(k = 1; k <= 9; k++){
+                        td.innerHTML += `${j} * ${k} = ${j*k}` + "<br>";
+                    }
+                }
+            }
+        }
+        document.getElementById("container").append(table);
+    </script>
+</body>
+</html>

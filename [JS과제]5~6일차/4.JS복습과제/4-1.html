@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달각달각 계산기</title>
+    <style>
+        #container{
+            justify-content: center;
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+            border-radius: 15px;
+        }
+        #inputDiv{
+            margin-bottom: 50px;
+            padding: 10px;
+            width: 420px;
+            height: 100px;
+            background-color: white;
+            border-radius: 15px;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            font-size: 40px;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            font-size: 24px;
+        }
+        .flex{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body class="flex">
+    <h1>Click MyCaluculator</h1>
+
+    <div id="container" class="flex">
+        <div id="inputDiv"></div>
+        <table>
+            <tr>
+                <td><button id="btn_7">7</button></td>
+                <td><button id="btn_8">8</button></td>
+                <td><button id="btn_9">9</button></td>
+                <td><button id="btn_mul">x</button></td>
+            </tr>
+            <tr>
+                <td><button id="btn_4">4</button></td>
+                <td><button id="btn_5">5</button></td>
+                <td><button id="btn_6">6</button></td>
+                <td><button id="btn_div">/</button></td>
+            </tr>
+            <tr>
+                <td><button id="btn_1">1</button></td>
+                <td><button id="btn_2">2</button></td>
+                <td><button id="btn_3">3</button></td>
+                <td><button id="btn_sub">-</button></td>
+            </tr>
+            <tr>
+                <td><button id="btn_reset">C</button></td>
+                <td><button id="btn_0">0</button></td>
+                <td><button id="btn_add">+</button></td>
+                <td><button id="btn_result">=</button></td>
+            </tr>
+        </table>
+        
+    </div>
+
+    <script>
+        const inputDiv = document.getElementById("inputDiv");
+        const btn_7 = document.getElementById("btn_7");
+        const btn_8 = document.getElementById("btn_8");
+        const btn_9 = document.getElementById("btn_9");
+        const btn_mul = document.getElementById("btn_mul");
+        const btn_4 = document.getElementById("btn_4");
+        const btn_5 = document.getElementById("btn_5");
+        const btn_6 = document.getElementById("btn_6");
+        const btn_div = document.getElementById("btn_div");
+        const btn_1 = document.getElementById("btn_1");
+        const btn_2 = document.getElementById("btn_2");
+        const btn_3 = document.getElementById("btn_3");
+        const btn_sub = document.getElementById("btn_sub");
+        const btn_reset = document.getElementById("btn_reset");
+        const btn_0 = document.getElementById("btn_0");
+        const btn_add = document.getElementById("btn_add");
+        const btn_result = document.getElementById("btn_result");
+
+        let expression = "";
+        let result = 0;
+        inputDiv.innerText = "0";
+
+        function createSpan(key){
+            if(inputDiv.innerText == 0) { inputDiv.innerText = ""; }
+            inputDiv.append(document.createElement("span").textContent = key);
+            expression += `${key}`;
+            console.log(expression);
+        }
+
+        const handleClick = function(event){
+            if(event.target.id == "btn_7"){
+                createSpan(7);
+            }else if(event.target.id == "btn_8"){
+                createSpan(8);
+            }else if(event.target.id == "btn_9"){
+                createSpan(9);
+            }else if(event.target.id == "btn_mul"){
+                createSpan("*");
+            }else if(event.target.id == "btn_4"){
+                createSpan(4);
+            }else if(event.target.id == "btn_5"){
+                createSpan(5);
+            }else if(event.target.id == "btn_6"){
+                createSpan(6);
+            }else if(event.target.id == "btn_div"){
+                createSpan("/");
+            }else if(event.target.id == "btn_1"){
+                createSpan(1);
+            }else if(event.target.id == "btn_2"){
+                createSpan(2);
+            }else if(event.target.id == "btn_3"){
+                createSpan(3);
+            }else if(event.target.id == "btn_sub"){
+                createSpan("-");
+            }
+            else if(event.target.id == "btn_reset"){
+                inputDiv.innerText = "0";
+                expression = "";
+            }
+            else if(event.target.id == "btn_0"){
+                createSpan(0);
+            }else if(event.target.id == "btn_add"){
+                createSpan("+");
+            }
+            else if(event.target.id == "btn_result"){
+                inputDiv.innerText = "";
+                expression = eval(expression);
+                inputDiv.append(document.createElement("span").textContent = expression);
+            }
+        }
+
+        btn_7.addEventListener("click", handleClick);
+        btn_8.addEventListener("click", handleClick);
+        btn_9.addEventListener("click", handleClick);
+        btn_mul.addEventListener("click", handleClick);
+        btn_4.addEventListener("click", handleClick);
+        btn_5.addEventListener("click", handleClick);
+        btn_6.addEventListener("click", handleClick);
+        btn_div.addEventListener("click", handleClick);
+        btn_1.addEventListener("click", handleClick);
+        btn_2.addEventListener("click", handleClick);
+        btn_3.addEventListener("click", handleClick);
+        btn_sub.addEventListener("click", handleClick);
+        btn_reset.addEventListener("click", handleClick);
+        btn_0.addEventListener("click", handleClick);
+        btn_add.addEventListener("click", handleClick);
+        btn_result.addEventListener("click", handleClick);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘날짜</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <p id="now"></p>
+    <p id="rest"></p>
+    
+    <script>
+        // '24년 12월 31일 23시 59분 59초 999밀리초 - 현재 날짜' 계산, 남은 시간 출력
+        // 예시 : 일 시간 분 초
+        let nowTimerId;
+
+        nowTimerId = setInterval(function(){
+            const nowP = document.getElementById("now");
+            const restP = document.getElementById("rest");
+            
+            const now = new Date();
+            const year2024 = new Date(2024, 11, 31, 23, 59, 59, 999);
+
+            let restTime = year2024.getTime() - now.getTime();
+            restDate = Math.ceil(restTime / (1000 * 60 * 60 * 24) - 1);
+            restHour = year2024.getHours() - now.getHours();
+            restMin = year2024.getMinutes() - now.getMinutes();
+            restSec = year2024.getSeconds() - now.getSeconds();
+            //console.log(restDate);
+
+            nowP.textContent = `현재 날짜와 시간 : ${now}`;
+            restP.textContent = `올해의 남은 시간 : ${restDate}일 ${restHour}시간 ${restMin}분 ${restSec}초 남았습니다.`;
+
+        })
+        
+        console.log(new Date());
+    </script>
+</body>
+</html>
