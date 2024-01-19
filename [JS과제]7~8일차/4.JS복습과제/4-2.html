@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 멈춰!</title>
+    <style>
+        #img{
+            margin: 0;
+            width: 800px;
+            height: 450px;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div id="img"></div>
+    <button id="stop">멈춰</button>
+
+    <script>
+        // setInterval()
+        // backgroundImage url 이용해 이미지 바꾸기
+        let imgDiv = document.getElementById("img");
+        const stopBtn = document.getElementById("stop");
+        const imgList = ["url(images/1.jpeg)", "url(images/2.jpeg)", "url(images/3.jpeg)"];
+        let timerId;
+        let i = 0;
+
+        timerId = setInterval(function(){
+            i++;
+
+            if(i > 2){ i = 0; }
+
+            imgDiv.style.backgroundImage = imgList[i];
+        }, 1000)
+
+        stopBtn.addEventListener("click", function(){
+            clearInterval(timerId);
+        })
+    </script>
+</body>
+</html>
