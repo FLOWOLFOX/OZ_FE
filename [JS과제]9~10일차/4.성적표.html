@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적표</title>
+    <style>
+        table, th, tr, td{
+            width: 300px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>떡잎 유치원 멀리뛰기 결과</h1>
+
+    <div id="tableDiv"></div>
+    
+    <h2>75점이 넘는 사람</h2>
+    
+    <script>
+        const tableDiv = document.getElementById("tableDiv");
+        const table = document.createElement("table");
+        const p = document.createElement("p");
+
+        const tableHead = ["이름", "점수"];
+        const characters = [
+            {"name" : "짱구", "score" : 45},
+            {"name" : "맹구", "score" : 75},
+            {"name" : "철수", "score" : 95},
+            {"name" : "훈이", "score" : 50},
+            {"name" : "유리", "score" : 68},
+            {"name" : "수지", "score" : 86},
+        ];
+
+        // 테이블 헤더 출력
+        for(i = 0; i <= 1; i++){
+            const th = document.createElement("th");
+            th.textContent = tableHead[i];
+            table.append(th);
+        }
+        // 테이블 데이터 출력
+        for(i = 0; i < 6; i++){
+            const tr = document.createElement("tr");
+            table.append(tr);
+
+            // 0이면 이름, 1이면 점수
+            for(j = 0; j <= 1; j++){
+                const td = document.createElement("td");
+
+                if(j == 0){
+                    td.textContent = characters[i].name;
+                }else{
+                    td.textContent = characters[i].score;
+                }
+                table.append(td);
+            }
+        }
+        tableDiv.append(table);
+
+        // 75점이 넘는 사람
+        let highScorer = characters.filter(function(item){
+            return item.score >= 75;
+        })
+
+        // 추출한 사람 중에서 점수가 높은 순으로 나열
+        let temp;
+        
+        for(i = 0; i < highScorer.length - 1; i++){
+            if(highScorer[i].score < highScorer[i+1].score){
+                temp = highScorer[i];
+                highScorer[i] = highScorer[i+1];
+                highScorer[i+1] = temp;
+            }   
+        }
+
+        // 출력
+        for(i = 0; i < highScorer.length; i++){
+            if(i == highScorer.length - 1){
+                p.textContent += `${highScorer[i].name}`;    
+            }else{
+                p.textContent += `${highScorer[i].name}, `;
+            }
+        }
+        document.body.append(p);
+    </script>
+</body>
+</html>
