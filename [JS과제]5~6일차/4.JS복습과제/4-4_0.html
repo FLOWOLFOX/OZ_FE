@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스톱워치</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>⏰스톱워치⏰</h1>
+    <p id="stopWatch">경과 시간 : 0:0:0</p>
+    <button id="start">시작</button>
+    <button id="stop">중지</button>
+    <button id="reset">초기화</button>
+    
+    <script>
+        
+        // setInterval() 혹은 Date() 생성자 이용
+        // Date()를 사용해 현재 날짜와 시간 정보 다루기 용이, 밀리초 측정 가능
+        // onclick이나 addEventListener 이용해 클릭 이벤트 등록
+        // 시작 -> 중지 -> 시작하면 시간이 이어서 흐르게
+        // this를 이용해 코드 작성
+
+        // 시작 : 누른 시점 저장, 현재 시간 - 누른 시간
+        // 정지 : 위 시간을 누적 시간으로 저장
+        // 시작 : 누적 시간 + (현재 시간 - 누른 시간)
+        const watchP = document.getElementById("stopWatch");
+        const startBtn = document.getElementById("start");
+        const stopBtn = document.getElementById("stop");
+        const resetBtn = document.getElementById("reset");
+
+        let timerId;
+        let recordTime = [];
+        recordTime[0] = 0;
+        let i = 0;
+
+        startBtn.addEventListener("click", function(){
+            let startTime = new Date();
+
+            i++;
+
+            if(recordTime[i-1] == 0){
+                timerId = setInterval(function(){
+                    let nowTime = new Date();
+                    let runTime = new Date(nowTime - startTime);
+
+                    runTimeMin = runTime.getMinutes();
+                    runTimeSec = runTime.getSeconds();
+                    runTimeMs = Math.floor(runTime.getMilliseconds()/10);
+
+                    recordTime[i] = runTime;
+
+                    watchP.textContent = `경과 시간 : ${runTimeMin}:${runTimeSec}:${runTimeMs}`;
+                })
+            }
+            else{
+                timerId = setInterval(function(){
+                    let nowTime = new Date();
+                    let runTime = new Date(nowTime - startTime);
+                    Time = new Date(recordTime[i-1]);
+
+                    runTimeMin = Time.getMinutes() + runTime.getMinutes();
+                    runTimeSec = Time.getSeconds() + runTime.getSeconds();
+                    runTimeMs = Math.floor((Time.getMilliseconds()/10 + runTime.getMilliseconds()/10));
+
+                    // 재시작 시, 1초 가량 사라짐.
+                    // 재시작 2회부터 오류
+
+                    if(runTimeMs >= 100){
+                        runTimeMs %= 100;
+                    }
+
+                    recordTime[i] = recordTime[i-1] + runTime;
+
+                    watchP.textContent = `경과 시간 : ${runTimeMin}:${runTimeSec}:${runTimeMs}`;
+                })
+            }
+        })
+
+        // 정지 버튼
+        stopBtn.addEventListener("click", function(){
+            clearInterval(timerId);
+        })
+
+        // 초기화 버튼
+        resetBtn.addEventListener("click", function(){
+            clearInterval(timerId);
+            i = 0;
+            watchP.textContent = "경과 시간 : 0:0:0";
+        })
+    </script>
+</body>
+</html>
