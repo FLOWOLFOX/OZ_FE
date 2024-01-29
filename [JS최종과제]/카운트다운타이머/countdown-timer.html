@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link rel="icon" href="./images/oz_icon.png" />
+    <title>오즈코딩스쿨 | 카운트다운 타이머</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        background-color: black;
+        color: azure;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        font-family: 'Gowun Dodum', sans-serif;
+      }
+      header {
+        height: 200px;
+        flex-direction: column;
+      }
+      header > p {
+        margin: 5px;
+      }
+      header > p:first-child {
+        font-size: 60px;
+      }
+      header > p:last-child {
+        font-size: 50px;
+      }
+      main {
+        position: absolute;
+        top: 40%
+      }
+      #timerNum > div {
+        width: 200px;
+        height: 100px;
+      }
+      #timerNum p {
+        width: 130px;
+        font-size: 100px;
+        background-color: blueviolet;
+        border-radius: 5%;
+      }
+      #timerDays > p {
+        width: auto;
+        font-size: 100px;
+        background-color: blueviolet;
+        border-radius: 5%;
+      }
+      #timerUnit p {
+        width: 200px;
+        margin-top: 40px;
+        font-size: 24px;
+      }
+      footer {
+        width: 100vw;
+        height: 50px;
+        font-size: 12px;
+      }
+      footer a {
+        color: lightblue;
+        text-decoration: none;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media screen and (max-width: 800px) {
+       #header > p:nth-of-type(1) {
+        font-size: 50px;
+       }
+       #header > p:nth-of-type(2) {
+        font-size: 40px;
+       }
+       #timerNum > div {
+        width: 150px;
+       }
+       #timerNum p {
+        width: 100px;
+        font-size: 50px;
+       }
+       #timerUnit p {
+        width: 150px;
+        font-size: 20px;
+       }
+      }
+
+      @media screen and (max-width: 550px) {
+        #timerNum > div {
+          width: 120px;
+        }
+        #timerNum p {
+          font-size: 40px;
+        }
+        #timerUnit p {
+          width: 120px;
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" class="flex">
+      <header id="header" class="flex">
+        <p>OZ FE 2기 종료일까지</p>
+        <p>(2024년 6월 25일)</p>
+      </header>
+
+      <main id="main">
+        <div id="timer">
+          <div id="timerNum" class="flex">
+            <div id="timerDays" class="flex"></div>
+            <div id="timerHours" class="flex"></div>
+            <div id="timerMins" class="flex"></div>
+            <div id="timerSecs" class="flex"></div>
+          </div>
+          <div id="timerUnit" class="flex">
+            <p id="DaysText">Days</p>
+            <p id="HoursText">Hours</p>
+            <p id="MinsText">Mins</p>
+            <p id="SecsText">Secs</p>
+          </div>
+        </div>
+      </main>
+
+      <footer id="footer" class="flex">
+        © 2024. <a href="https://ozcodingschool.com/" target="_blank">ozcodingschool</a>. All rights
+        reserved. Developed by <a href="https://github.com/FLOWOLFOX" target="_blank">홍지원</a>.
+      </footer>
+    </div>
+    
+    <script>
+      const dDayTimer = document.getElementById("dDayTimer");
+      const timerDays = document.getElementById("timerDays");
+      const timerHours = document.getElementById("timerHours");
+      const timerMins = document.getElementById("timerMins");
+      const timerSecs = document.getElementById("timerSecs");
+      const timerDaysNum = document.createElement("p");
+      const timerHoursNum = document.createElement("p");
+      const timerMinsNum = document.createElement("p");
+      const timerSecsNum = document.createElement("p");
+      const dDay = new Date(2024, 5, 24, 23, 59, 59, 999);
+
+      function appendEl(div, element) {
+        div.append(element);
+      }
+
+      function addZero(num) {
+        if(num.textContent < 10) { return num.textContent = '0' + num.textContent; }
+        return num.textContent;
+      }
+
+      const timerId = setInterval(function() {
+        const now = new Date();
+        const countDown = dDay.getTime() - now.getTime();
+
+        timerDaysNum.textContent = Math.ceil(countDown / (1000 * 60 * 60 * 24) - 1);
+        timerHoursNum.textContent = dDay.getHours() - now.getHours();
+        timerMinsNum.textContent = dDay.getMinutes() - now.getMinutes();
+        timerSecsNum.textContent = dDay.getSeconds() - now.getSeconds();
+
+        timerHoursNum.textContent = addZero(timerHoursNum);
+        timerMinsNum.textContent = addZero(timerMinsNum);
+        timerSecsNum.textContent = addZero(timerSecsNum);
+
+        appendEl(timerDays, timerDaysNum);
+        appendEl(timerHours, timerHoursNum);
+        appendEl(timerMins, timerMinsNum);
+        appendEl(timerSecs, timerSecsNum);
+        
+      }, 100);
+    </script>
+  </body>
+</html>
